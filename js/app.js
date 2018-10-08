@@ -1,8 +1,8 @@
 var myAppx = angular.module('myApp',['ngMessages','ngResource']);
 
 myAppx.controller('mainController', [
-    '$scope', '$log', '$filter', '$resource',
-    function($scope, $log, $filter, $resource){
+    '$scope', '$log', '$filter', '$resource', '$timeout',
+    function($scope, $log, $filter, $resource, $timeout){
         console.log($scope);
     
         $log.log("Hello");
@@ -17,6 +17,13 @@ myAppx.controller('mainController', [
         $log.info($scope.formattedname);
     
         console.log($resource);
+
+        $timeout(function(){
+
+            $scope.name = 'Everybody';
+
+        }, 3000); // 3000 milliseconds - 3 seconds
+        
     
     }
 ]);
