@@ -5,6 +5,12 @@ myAppx.controller('mainController', [
     function($scope, $log, $filter, $resource, $timeout){
         console.log($scope);
     
+        $scope.handle = '';
+
+        $scope.lowercasehandle = function(){
+            return $filter('lowercase')($scope.handle);
+        };
+
         $log.log("Hello");
         $log.info("This is some information");
         $log.warn("Warning!");
