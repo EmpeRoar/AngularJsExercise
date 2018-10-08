@@ -19,6 +19,11 @@ myAppx.controller('mainController', [
             { rulename: "Must be cool" }
         ];
 
+        $scope.clickButton = function(){
+            alert('Clicker!');
+            $scope.namex = "clickers";
+        };
+
 
         $scope.$watch('handle', function(newValue, oldValue){
 

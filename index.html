@@ -20,12 +20,18 @@
                 ng-hide
                 ng-class
                 ng-repeat
+                ng-click
+                ng-cloak
             -->
         </div>
 
 
         <div ng-controller="mainController">
 
+            <button ng-click="clickButton()">Click Me</button>
+            <div>
+                {{namex}}
+            </div>    
             
             <div class="alert" ng-class="{ 'alert-warning' : handle.length < characters, 'alert-danger' : handle.length > characters }" 
                  ng-if="handle.length !== characters">
@@ -37,7 +43,7 @@
                     <div ng-show="handle.length < characters">
                         You have less than 5 characters
                     </div>
-                    
+
             </div>
 
             
