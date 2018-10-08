@@ -1,12 +1,40 @@
 <html ng-app="myApp">
     <head>
         <title>AngularJs Exercise</title>
-        <script src="js/angular.min.js"></script>
-        <script src="js/app.js"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
     </head>
     <body>
         <div ng-controller="mainController">
             <h1>Hello World!</h1>
+
+            <form name="myForm">
+                <label>
+                    Enter text:
+                    <input type="email" ng-model="field" name="myField" required maxlength="15" />
+                </label>
+                <div ng-messages="myForm.myField.$error" role="alert">
+                    <div class="alert alert-danger" ng-message="required">Please enter a value for this field.</div>
+                    <div ng-message="email">This field must be a valid email address.</div>
+                    <div ng-message="maxlength">This field can be at most 15 characters long.</div>
+                </div>
+            </form>
+
+
         </div>
+
+
+
+        <script src="js/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular-messages.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular-resource.min.js"></script>
+        <script src="js/app.js"></script>
+
     </body>
 </html>
