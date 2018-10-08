@@ -9,3 +9,6 @@ Directive: Instruction to AngularJs to manipulate DOM
 
 === vs ==
 !== vs !=
+
+Directives
+https://docs.angularjs.org/api/ng/directive
