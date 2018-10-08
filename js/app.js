@@ -11,6 +11,44 @@ myAppx.controller('mainController', [
             return $filter('lowercase')($scope.handle);
         };
 
+        $scope.characters = 5;
+
+        $scope.rules = [
+            { rulename: "Must be 5 characters" },
+            { rulename: "Must not be used elsewhere" },
+            { rulename: "Must be cool" }
+        ];
+
+
+        $scope.$watch('handle', function(newValue, oldValue){
+
+            console.info('Changed!');
+            console.log('Old:' + oldValue);
+            console.log('New:' + newValue);
+
+        });
+
+        // angularJs
+        $timeout(function(){
+            $scope.name = 'Everybody';
+        }, 3000); // 3000 milliseconds - 3 seconds
+
+        // pure javascript
+        setTimeout(function(){
+           
+            // outside angularjs context
+            $scope.handle = 'newtwitterhandle';
+            console.log('Scope changed!');
+
+            // do apply if:
+            // using jquery, settimeout
+            $scope.$apply(function(){
+                $scope.handle = 'newtwitterhandle';
+                console.log('Scope changed!');
+            });
+
+        }, 3000);
+
         $log.log("Hello");
         $log.info("This is some information");
         $log.warn("Warning!");
@@ -24,11 +62,6 @@ myAppx.controller('mainController', [
     
         console.log($resource);
 
-        $timeout(function(){
-
-            $scope.name = 'Everybody';
-
-        }, 3000); // 3000 milliseconds - 3 seconds
         
     
     }

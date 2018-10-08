@@ -11,13 +11,49 @@
 
     </head>
     <body>
+        <div>
+            <!-- common directives -->
+            <!-- 
+
+                ng-if
+                ng-show
+                ng-hide
+                ng-class
+                ng-repeat
+            -->
+        </div>
+
+
         <div ng-controller="mainController">
+
+            
+            <div class="alert" ng-class="{ 'alert-warning' : handle.length < characters, 'alert-danger' : handle.length > characters }" 
+                 ng-if="handle.length !== characters">
+
+                 <div ng-show="handle.length > characters">
+                        You have more than 5 characters
+                    </div>
+        
+                    <div ng-show="handle.length < characters">
+                        You have less than 5 characters
+                    </div>
+                    
+            </div>
+
+            
+
             <h1>Hello World {{ name + ' xxx.' }}!</h1>
 
 
             <div>
                 <label for="">What is your twitter handle?</label>
                 <input type="text" ng-model="handle" />
+                <h3>Rules</h3>
+                <ul>
+                    <li ng-repeat="rule in rules">
+                        {{ rule.rulename }}
+                    </li>
+                </ul>
             </div>
             <div>
                 <h1>twitter.com/{{handle}}</h1>
