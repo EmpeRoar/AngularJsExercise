@@ -25,67 +25,19 @@
             -->
         </div>
 
+        <ul>
+            <li><a href="#!">Main</a></li>
+            <li><a href="#!/second">Second</a></li>
+        </ul>
 
-        <div ng-controller="mainController">
-
-            <button ng-click="clickButton()">Click Me</button>
-            <div>
-                {{namex}}
-            </div>    
-            
-            <div class="alert" ng-class="{ 'alert-warning' : handle.length < characters, 'alert-danger' : handle.length > characters }" 
-                 ng-if="handle.length !== characters">
-
-                 <div ng-show="handle.length > characters">
-                        You have more than 5 characters
-                    </div>
-        
-                    <div ng-show="handle.length < characters">
-                        You have less than 5 characters
-                    </div>
-
-            </div>
-
-            
-
-            <h1>Hello World {{ name + ' xxx.' }}!</h1>
-
-
-            <div>
-                <label for="">What is your twitter handle?</label>
-                <input type="text" ng-model="handle" />
-                <h3>Rules</h3>
-                <ul>
-                    <li ng-repeat="rule in rules">
-                        {{ rule.rulename }}
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h1>twitter.com/{{handle}}</h1>
-                <h2>twitter.com/{{lowercasehandle()}}</h2>
-            </div>
-
-            <form name="myForm">
-                <label>
-                    Enter text:
-                    <input type="email" ng-model="field" name="myField" required maxlength="15" />
-                </label>
-                <div ng-messages="myForm.myField.$error" role="alert">
-                    <div class="alert alert-danger" ng-message="required">Please enter a value for this field.</div>
-                    <div ng-message="email">This field must be a valid email address.</div>
-                    <div ng-message="maxlength">This field can be at most 15 characters long.</div>
-                </div>
-            </form>
-
-
-        </div>
+        <div ng-view></div>
 
 
 
         <script src="js/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular-messages.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular-resource.min.js"></script>
+        <script src="https://code.angularjs.org/1.7.4/angular-route.js"></script>
         <script src="js/app.js"></script>
 
     </body>
