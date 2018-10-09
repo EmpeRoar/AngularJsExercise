@@ -1,0 +1,11 @@
+<div>
+    Directive 1
+</div>
+
+<div ng-repeat="person in people">
+    <search-result 
+    person-name="{{ person.name }}"
+    person-address="{{ person.address }}" 
+    person-object="person"
+    formatted-address-function="formattedAddress(aperson)"></search-result>
+</div>

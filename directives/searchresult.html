@@ -1,5 +1,15 @@
 <div>
     <a href="#">link 1</a>
-    <h3>{{ person.name }}</h3>
-    <p>{{ person.address }}</p> xx
+    <h3>{{ personName }}</h3>
+    <p>{{ personAddress }}</p> 
+
+    <div>
+        This is for = in directive scope
+        <p>
+                {{ personObject.name }}
+        </p>
+        <p>
+            {{ formattedAddressFunction({ aperson: personObject })}}
+        </p>
+    </div>
 </div>
