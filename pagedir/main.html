@@ -3,9 +3,15 @@
 </div>
 
 <div ng-repeat="person in people">
+
     <search-result 
-    person-name="{{ person.name }}"
-    person-address="{{ person.address }}" 
-    person-object="person"
-    formatted-address-function="formattedAddress(aperson)"></search-result>
+        person-name="{{ person.name }}"
+        person-address="{{ person.address }}" 
+        person-object="person"
+        formatted-address-function="formattedAddress(aperson)">
+
+        <small>transclude me bro</small>
+
+    </search-result>
+
 </div>

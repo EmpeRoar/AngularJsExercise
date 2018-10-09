@@ -99,7 +99,25 @@ myAppx.directive("searchResult", function(){
             personAddress: "@", // @ = text
             personObject: "=", // object
             formattedAddressFunction: "&" // this is a function
-        }
+        },
+        compile: function(elem, attrs){
+
+            // compiling here
+
+            return {
+                pre: function(){
+                    // pre link
+                },
+                post: function(scope, elements, attrs){
+                    // post link : before output to DOM
+                }
+            }
+        },
+        transclude: true
+        // ,
+        // link: function(){
+        //     // same as empty compile returning post link ???
+        // }
     }
 });
 
